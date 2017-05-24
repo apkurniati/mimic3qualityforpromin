@@ -1,0 +1,25 @@
+--- icd9 diagnoses code
+SELECT DISTINCT
+  diagnoses_icd.icd9_code,
+  count(diagnoses_icd.row_id)
+FROM 
+  mimiciii.diagnoses_icd, 
+  mimiciii.d_icd_diagnoses
+WHERE 
+  diagnoses_icd.icd9_code NOT IN 
+  (SELECT DISTINCT icd9_code
+  FROM mimiciii.d_icd_diagnoses)
+GROUP BY diagnoses_icd.icd9_code;
+
+--- icd9 procedures code
+SELECT DISTINCT
+  procedures_icd.icd9_code,
+  count(procedures_icd.row_id)
+FROM 
+  mimiciii.procedures_icd, 
+  mimiciii.d_icd_procedures
+WHERE 
+  procedures_icd.icd9_code NOT IN 
+  (SELECT DISTINCT icd9_code
+  FROM mimiciii.d_icd_procedures)
+GROUP BY procedures_icd.icd9_code;

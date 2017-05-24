@@ -1,0 +1,221 @@
+-- admissions per cancer type
+
+--type1
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '14%');
+
+--type2
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '15%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type3
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '160%' AND '165%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type4
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '170%' AND '175%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type5
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '176%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type6
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '179%' AND '189%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type7
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '19%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type8
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '20%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type9
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '209%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type10
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '210%' AND '229%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type11
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '230%' AND '234%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type12
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code BETWEEN '235%' AND '238%')
+ORDER BY subject_id, hadm_id, charttime, activity;
+
+--type13
+SELECT DISTINCT
+  admissions_trans.subject_id, 
+  admissions_trans.hadm_id, 
+  activity, 
+  charttime
+FROM 
+  cancer2.admissions_trans,
+  mimiciii.diagnoses_icd
+WHERE 
+  admissions_trans.hadm_id = diagnoses_icd.hadm_id AND
+  admissions_trans.hadm_id IN
+  (SELECT DISTINCT hadm_id
+  FROM mimiciii.diagnoses_icd
+  WHERE icd9_code LIKE '239%')
+ORDER BY subject_id, hadm_id, charttime, activity;

@@ -1,0 +1,64 @@
+-- chartevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct itemid),
+min(charttime), max(charttime)
+  FROM mimiciii.chartevents;
+
+-- cptevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct cpt_cd),
+min(chartdate), max(chartdate)
+  FROM mimiciii.cptevents;
+
+-- datetimeevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct itemid),
+min(charttime), max(charttime)
+  FROM mimiciii.datetimeevents;
+
+-- icustays
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id),
+min(intime), max(outtime)
+  FROM mimiciii.icustays;
+
+-- inputevents_cv
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct itemid),
+min(charttime), max(charttime)
+  FROM mimiciii.inputevents_cv;
+
+-- inputevents_mv
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct itemid),
+min(starttime), max(starttime)
+  FROM mimiciii.inputevents_mv;
+
+-- labevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct itemid),
+min(charttime), max(charttime)
+  FROM mimiciii.labevents;
+
+-- microbiologyevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct spec_itemid),
+min(charttime), max(charttime)
+  FROM mimiciii.microbiologyevents;
+
+-- noteevents
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct description),
+min(charttime), max(charttime)
+  FROM mimiciii.noteevents;
+
+-- prescriptions
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct drug),
+min(starttime), max(starttime)
+  FROM mimiciii.outputevents;
+
+-- procedureevents_mv
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id), count(distinct itemid),
+min(starttime), max(starttime)
+  FROM mimiciii.procedureevents_mv;
+
+-- services
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct curr_service),
+min(transfertime), max(transfertime)
+  FROM mimiciii.services;
+
+-- transfers
+SELECT count(distinct subject_id), count(distinct hadm_id), count(distinct icustay_id),count(distinct eventtype),
+min(intime), max(outtime)
+  FROM mimiciii.transfers;
