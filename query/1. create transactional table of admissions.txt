@@ -1,0 +1,56 @@
+CREATE TABLE mimiciii.admissions_trans
+(
+  subject_id integer,
+  hadm_id integer,
+  activity character varying(200),
+  charttime timestamp(0) without time zone
+);
+
+INSERT INTO mimiciii.admissions_trans(
+SELECT DISTINCT
+  admissions.subject_id, 
+  admissions.hadm_id, 
+  'admission',
+  admissions.admittime
+FROM 
+  mimiciii.admissions);
+
+INSERT INTO mimiciii.admissions_trans(
+SELECT DISTINCT
+  admissions.subject_id, 
+  admissions.hadm_id, 
+  'discharge',
+  admissions.dischtime
+FROM 
+  mimiciii.admissions
+WHERE dischtime IS NOT NULL);
+
+INSERT INTO mimiciii.admissions_trans(
+SELECT DISTINCT
+  admissions.subject_id, 
+  admissions.hadm_id, 
+  'death',
+  admissions.deathtime
+FROM 
+  mimiciii.admissions
+WHERE deathtime IS NOT NULL);
+
+INSERT INTO mimiciii.admissions_trans(
+SELECT DISTINCT
+  admissions.subject_id, 
+  admissions.hadm_id, 
+  'ED reg',
+  admissions.edregtime
+FROM 
+  mimiciii.admissions
+WHERE edregtime IS NOT NULL);
+
+INSERT INTO mimiciii.admissions_trans(
+SELECT DISTINCT
+  admissions.subject_id, 
+  admissions.hadm_id, 
+  'ED out',
+  admissions.edouttime
+FROM 
+  mimiciii.admissions
+WHERE edouttime IS NOT NULL);
