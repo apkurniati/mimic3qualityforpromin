@@ -6,7 +6,6 @@ Created on Thu Jun  1 10:02:15 2017
 import pandas as pd
 import glob
 
-#file = 'mimic3/ADMISSIONS.csv'
 def count_missing(file):
     df = pd.read_csv(file, header=0, sep=',', index_col=0)
     #counting missing values per columns
